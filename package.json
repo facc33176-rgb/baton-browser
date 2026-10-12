@@ -1,0 +1,27 @@
+{
+  "name": "baton-browser",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local browser bridge with persistent sessions and human takeover over MCP",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "esbuild web/app.js --bundle --format=esm --outfile=web/dist/app.js",
+    "start": "node src/server.cjs",
+    "mcp": "node src/mcp.cjs",
+    "test": "node --test test/*.test.cjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "@novnc/novnc": "1.7.0",
+    "chrome-devtools-mcp": "1.10.1",
+    "express": "5.2.1",
+    "playwright": "1.56.1",
+    "ws": "8.22.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.11"
+  }
+}
